@@ -16,12 +16,12 @@ for case in list_case:
     # =======your logic here. Below we do binary thresholding as a demo=====
 
     # using SimpleITK to do binary thresholding between 100 - 10000
-    vs_pred = sitk.BinaryThreshold(img, lowerThreshold=400, upperThreshold=500)
-    cochlea_pred = sitk.BinaryThreshold(img, lowerThreshold=900, upperThreshold=1100)
+    vs_pred = your model(img)
 
-    result = vs_pred + 2*cochlea_pred
+    result = postprocess(vs_pred)
     # ======================================================================
     # please make sure the results were processed with largest component extraction
     result = sitk.GetImagefromArray(result)
+    # result.CopyInformation(img)
     # save the segmentation mask
     sitk.WriteImage(result, path_pred.format(case))

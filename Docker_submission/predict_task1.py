@@ -23,5 +23,6 @@ for case in list_case:
     # ======================================================================
     # please make sure the results were processed with largest component extraction
     result = sitk.GetImagefromArray(result)
+    result.CopyInformation(img)
     # save the segmentation mask
     sitk.WriteImage(result, path_pred.format(case))

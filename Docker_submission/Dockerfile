@@ -13,4 +13,5 @@ COPY ./ ./
 
 ## Execute the inference command 
 CMD ["./predict_task1.py"]
+# CMD ["./predict_task2.py"]
 ENTRYPOINT ["python3"]
