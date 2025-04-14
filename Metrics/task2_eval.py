@@ -90,8 +90,7 @@ lpips_avg = np.mean(lpips_list)
 result_dict = {
     "psnr": round(psnr_avg, 4),
     "ssim": round(ssim_avg, 4),
-    "lpips": round(lpips_avg, 4),
- 
+    "lpips": round(lpips_avg, 4)
 }
 
 with open(os.path.join(output_dir, "scores.txt"), "w") as f:
